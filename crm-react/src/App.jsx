@@ -7,11 +7,17 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const res = await fetch(
-        "https://crm.rdstation.com/api/v1/contacts?token=66e5f14d9803c30027dc3f70"
+        "https://crm.rdstation.com/api/v1/contacts?token=66e5f14d9803c30027dc3f70",
+        {
+          mode: "no-cors",
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       const data = await res.json();
-
       setProducts(data);
     }
     fetchData();

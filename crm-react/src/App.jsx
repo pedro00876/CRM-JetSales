@@ -16,9 +16,10 @@ function App() {
           },
         }
       );
-
+      //promisse
       const data = await res.json();
-      setProducts(data);
+      console.log(data);
+      // setProducts(data);
     }
     fetchData();
   }, []);
@@ -26,11 +27,7 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Contatos</h1>
-      {products.map((list) => (
-        <li key={list.id}>
-          {list.total} - {list.contacts}
-        </li>
-      ))}
+      {products.map((list) => console.log(list))}
     </div>
   );
 }
